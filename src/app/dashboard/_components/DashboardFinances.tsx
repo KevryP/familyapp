@@ -1,15 +1,18 @@
+import { useTheme } from '@mui/material/styles';
 import { AccountCircle } from '@mui/icons-material';
 import { Card, CardContent, Grid2, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import React from 'react'
 
 const DashboardFinances = () => {
+  const theme = useTheme()
+  console.log(theme.palette.primary.main)
   return (
     <Grid2 container spacing={2}>
       <Grid2 size={4}>
         <Card>
           <CardContent>
             <List>
-              <ListItemButton>
+              <ListItemButton sx={{color: theme.palette.primary.main}}>
                 <ListItemIcon><AccountCircle /></ListItemIcon>
                 <ListItemText primary="Family Member1" />
               </ListItemButton>

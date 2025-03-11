@@ -32,6 +32,21 @@ const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          variants: [
+            {
+              props: { severity: 'info' },
+              style: {
+                backgroundColor: 'white',
+                color: 'red',
+              },
+            },
+          ],
+        },
+      },
+    },
   },
 });
 
