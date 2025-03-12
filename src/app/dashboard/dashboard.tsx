@@ -1,10 +1,11 @@
 'use client'
-import { Grid2, List, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material'
+import { Button, Grid2, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import React from 'react'
 import { Diversity1, Logout, Settings } from '@mui/icons-material';
 import DashboardFinances from './_components/DashboardFinances';
 import { type User } from '@supabase/supabase-js'
+import BasicModal from './_components/CreateGroupModal';
 
 const Dashboard = ({ user }: { user: User | null }) => {
   const theme = useTheme();
@@ -31,6 +32,10 @@ const Dashboard = ({ user }: { user: User | null }) => {
           </ListItemButton>
         </List>
         <List>
+          <ListItem>
+            <ListItemText primary="Groups" />
+            <BasicModal user={user}/>
+          </ListItem>
           <ListItemButton>
             <ListItemIcon><Diversity1 /></ListItemIcon>
             <ListItemText primary="Family" />

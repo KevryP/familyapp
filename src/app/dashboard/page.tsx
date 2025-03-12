@@ -8,6 +8,5 @@ export default async function DashboardPage() {
     data: { user },
   } = await supabase.auth.getUser()
 
-  console.log(user)
   return <Dashboard user={user} />
 }
